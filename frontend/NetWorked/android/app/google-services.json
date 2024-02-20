@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "652990527313",
+    "project_id": "networked-3a892",
+    "storage_bucket": "networked-3a892.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:652990527313:android:bfb8b2defb849ad5948570",
+        "android_client_info": {
+          "package_name": "com.limpfish.networked"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyADMxLgd8za98Kya-4iAKLsekI6LaVD7pY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
