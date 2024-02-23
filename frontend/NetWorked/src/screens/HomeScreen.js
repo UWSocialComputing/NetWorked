@@ -6,66 +6,142 @@ import {
   StyleSheet,
   ScrollView,
   TouchableOpacity,
+  // Image,
 } from 'react-native';
-import {CircularProgress} from 'react-native-circular-progress'; // for the circular progress bar
-import styles from '../config/styles'; // Make sure the path is correct
+// Import your CircularProgress component properly if it's a custom component
+// import {CircularProgress} from 'react-native-circular-progress';
 
 const HomeScreen = () => {
+  // Define goalsData inside the component if it's not defined elsewhere
+  const goalsData = {current: 2, target: 5};
+
   return (
-    <ScrollView style={styles.mainBackground}>
+    <ScrollView style={styles.container}>
       <View style={styles.header}>
-        {/* User avatar, date, and settings icon would be here */}
+        <Text style={styles.date}>6/06</Text>
       </View>
+
       <View style={styles.goalsContainer}>
-        <CircularProgress
-          size={120}
-          fill={40} // This should be dynamic based on your goals state
-          tintColor={styles.highlightedIcon.color}
-          backgroundColor={styles.nonActiveTab.borderBottomColor}
-          width={45}>
-          {() => <Text style={styles.primaryText}>2/5</Text>}
-        </CircularProgress>
-        <Text style={styles.secondaryText}>Monthly:</Text>
-        {/* Monthly progress bar component here */}
+        <Text style={styles.progressText}>2/5</Text>
+        <Text style={styles.goalsText}>Goals:</Text>
       </View>
+
       <View style={styles.eventsContainer}>
-        <Text style={styles.primaryText}>Today's Events:</Text>
-        {/* Map through your events data to display them */}
+        <Text style={styles.eventsText}>Today's Events:</Text>
       </View>
+
       <View style={styles.buttonContainer}>
-        <TouchableOpacity style={styles.bronzeButton}>
+        <TouchableOpacity style={styles.newContactButton}>
           <Text style={styles.buttonText}>New Contact</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.bronzeButton}>
+        <TouchableOpacity style={styles.myStatsButton}>
           <Text style={styles.buttonText}>My Stats</Text>
         </TouchableOpacity>
-        {/* Other buttons here */}
       </View>
+      {/* Wide buttons */}
+      <TouchableOpacity style={styles.messageCenterButton}>
+        <Text style={styles.wideButtonText}>Message Center</Text>
+      </TouchableOpacity>
+      <TouchableOpacity style={styles.myCalendarButton}>
+        <Text style={styles.wideButtonText}>My Calendar</Text>
+      </TouchableOpacity>
+      {/* Other components */}
     </ScrollView>
   );
 };
 
-// Add to your existing styles.js or create these within the HomeScreen.js
-const additionalStyles = StyleSheet.create({
+// Styles
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#c2c5aa',
+  },
   header: {
     flexDirection: 'row',
-    justifyContent: 'space-between',
+    justifyContent: 'center', // Center content horizontally
     alignItems: 'center',
-    // Add styles for your header
+    padding: 16,
+  },
+  date: {
+    fontSize: 60,
+    color: '#FFFFFF',
   },
   goalsContainer: {
-    // Add styles for your goals container
+    padding: 16,
+  },
+  progressText: {
+    fontSize: 18,
+  },
+  goalsText: {
+    fontSize: 18,
   },
   eventsContainer: {
-    // Add styles for your events container
+    padding: 16,
+  },
+  eventsText: {
+    fontSize: 18,
   },
   buttonContainer: {
-    // Add styles for your button container
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    padding: 16,
+  },
+  button: {
+    // Your existing styles for the button
+    backgroundColor: '#656d4a',
+    borderRadius: 20,
+    paddingVertical: 10,
+    width: 150, // Fixed width for equal size buttons
+    justifyContent: 'center',
+    alignItems: 'center',
+    margin: 10,
   },
   buttonText: {
-    // Add styles for your button text
+    fontSize: 18,
+    color: '#FFFFFF',
   },
-  // ... any other additional styles you need
+  messageCenterButton: {
+    backgroundColor: '#b6ad90', // You can change the color as needed
+    borderRadius: 20,
+    paddingVertical: 10,
+    paddingHorizontal: 20,
+    marginVertical: 8, // This controls the space between this button and others vertically
+    marginHorizontal: 16, // Adjust the margin to control how much width the button should take
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  myCalendarButton: {
+    backgroundColor: '#b6ad90', // You can change the color as needed
+    borderRadius: 20,
+    paddingVertical: 10,
+    paddingHorizontal: 20,
+    marginVertical: 8, // This controls the space between this button and others vertically
+    marginHorizontal: 16, // Adjust the margin to control how much width the button should take
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  wideButtonText: {
+    fontSize: 18,
+    color: '#414833', // Specific text color for the wide button
+  },
+  newContactButton: {
+    backgroundColor: '#656d4a',
+    borderRadius: 20,
+    paddingVertical: 10,
+    // Set a fixed width for the button
+    width: 150,
+    justifyContent: 'center', // This ensures text is centered in the button
+    alignItems: 'center', // This ensures text is centered in the button
+  },
+  myStatsButton: {
+    backgroundColor: '#656d4a',
+    borderRadius: 20,
+    paddingVertical: 10,
+    // Set a fixed width for the button
+    width: 150,
+    justifyContent: 'center', // This ensures text is centered in the button
+    alignItems: 'center', // This ensures text is centered in the button
+  },
 });
 
 export default HomeScreen;
