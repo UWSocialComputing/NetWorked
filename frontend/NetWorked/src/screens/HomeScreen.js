@@ -6,11 +6,12 @@ import {
   StyleSheet,
   ScrollView,
   TouchableOpacity,
+  Button,
 } from 'react-native';
 import {CircularProgress} from 'react-native-circular-progress'; // for the circular progress bar
 import styles from '../config/styles'; // Make sure the path is correct
 
-const HomeScreen = () => {
+const HomeScreen = ({navigation}) => {
   return (
     <ScrollView style={styles.mainBackground}>
       <View style={styles.header}>
@@ -40,6 +41,12 @@ const HomeScreen = () => {
           <Text style={styles.buttonText}>My Stats</Text>
         </TouchableOpacity>
         {/* Other buttons here */}
+      </View>
+      <View>
+        <Button
+          title="Message Center"
+          onPress={() => navigation.navigate('Template')}
+        />
       </View>
     </ScrollView>
   );

@@ -1,9 +1,20 @@
-// App.tsx located in the src directory
 import React from 'react';
-import HomeScreen from './screens/HomeScreen'; // Correct as 'HomeScreen.js' is inside the 'src/screens' directory
+import {NavigationContainer} from '@react-navigation/native';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import HomeScreen from './screens/HomeScreen';
+import TemplateScreen from './screens/TemplateScreen';
+
+const Stack = createNativeStackNavigator();
 
 function App() {
-  return <HomeScreen />;
+  return (
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Home">
+        <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen name="Template" component={TemplateScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
 }
 
 export default App;
