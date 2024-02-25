@@ -46,7 +46,7 @@ const HomeScreen = ({navigation}) => {
         <Button
           title="Message Center"
           onPress={() => navigation.navigate('Template')}
-        />
+        />{' '}
       </View>
     </ScrollView>
   );
