@@ -18,14 +18,14 @@ const HomeScreen = ({navigation}) => {
         {/* User avatar, date, and settings icon would be here */}
       </View>
       <View style={styles.goalsContainer}>
-        <CircularProgress
-          size={120}
-          fill={40} // This should be dynamic based on your goals state
-          tintColor={styles.highlightedIcon.color}
-          backgroundColor={styles.nonActiveTab.borderBottomColor}
-          width={45}>
-          {() => <Text style={styles.primaryText}>2/5</Text>}
-        </CircularProgress>
+        {/*<CircularProgress*/}
+        {/*  size={120}*/}
+        {/*  fill={40} // This should be dynamic based on your goals state*/}
+        {/*  tintColor={styles.highlightedIcon.color}*/}
+        {/*  backgroundColor={styles.nonActiveTab.borderBottomColor}*/}
+        {/*  width={45}>*/}
+        {/*  {() => <Text style={styles.primaryText}>2/5</Text>}*/}
+        {/*</CircularProgress>*/}
         <Text style={styles.secondaryText}>Monthly:</Text>
         {/* Monthly progress bar component here */}
       </View>
@@ -46,7 +46,7 @@ const HomeScreen = ({navigation}) => {
         <Button
           title="Message Center"
           onPress={() => navigation.navigate('Template')}
-        />{' '}
+        />
       </View>
     </ScrollView>
   );

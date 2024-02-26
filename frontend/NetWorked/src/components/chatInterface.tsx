@@ -30,7 +30,7 @@ const ChatInterface = () => {
         placeholder="Enter your prompt"
       />
       <Button title="Submit" onPress={handleSubmit} />
-      {response && <Text>Response: {response}</Text>}
+      {response && <Text>Response: {JSON.stringify(response)}</Text>}
     </View>
   );
 };
