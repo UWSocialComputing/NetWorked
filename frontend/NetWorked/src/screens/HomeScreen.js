@@ -12,41 +12,54 @@ import {CircularProgress} from 'react-native-circular-progress'; // for the circ
 import styles from '../config/styles'; // Make sure the path is correct
 
 const HomeScreen = ({navigation}) => {
+  // Get the current date
+  const currentDate = new Date();
+  const formattedDate = `${
+    currentDate.getMonth() + 1
+  }/${currentDate.getDate()}`;
+
   return (
-    <ScrollView style={styles.mainBackground}>
+    <ScrollView
+      style={styles.mainBackground}
+      contentContainerStyle={styles.scrollViewContainer} // This line is crucial
+    >
+      <View style={styles.dateContainer}>
+        <Text style={styles.dateText}>{formattedDate}</Text>
+      </View>
       <View style={styles.header}>
         {/* User avatar, date, and settings icon would be here */}
       </View>
-      <View style={styles.goalsContainer}>
-        {/*<CircularProgress*/}
-        {/*  size={120}*/}
-        {/*  fill={40} // This should be dynamic based on your goals state*/}
-        {/*  tintColor={styles.highlightedIcon.color}*/}
-        {/*  backgroundColor={styles.nonActiveTab.borderBottomColor}*/}
-        {/*  width={45}>*/}
-        {/*  {() => <Text style={styles.primaryText}>2/5</Text>}*/}
-        {/*</CircularProgress>*/}
-        <Text style={styles.secondaryText}>Monthly:</Text>
-        {/* Monthly progress bar component here */}
-      </View>
-      <View style={styles.eventsContainer}>
-        <Text style={styles.primaryText}>Today's Events:</Text>
-        {/* Map through your events data to display them */}
+      <View style={styles.centersContainer}>
+        <View style={styles.goalCenterContainer}>
+          <Text style={styles.centerText}>Goal Center</Text>
+        </View>
+        {/* Divider View */}
+        <View style={styles.centerDivider} />
+        <View style={styles.eventCenterContainer}>
+          <Text style={styles.centerText}>Event Center</Text>
+        </View>
       </View>
       <View style={styles.buttonContainer}>
-        <TouchableOpacity style={styles.bronzeButton}>
+        <TouchableOpacity style={styles.button}>
           <Text style={styles.buttonText}>New Contact</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.bronzeButton}>
+        <TouchableOpacity style={styles.button}>
           <Text style={styles.buttonText}>My Stats</Text>
         </TouchableOpacity>
-        {/* Other buttons here */}
       </View>
-      <View>
-        <Button
-          title="Message Center"
+      <View style={styles.messageCenterContainer}>
+        <TouchableOpacity
           onPress={() => navigation.navigate('Template')}
-        />
+          style={styles.fullWidthButton}>
+          <Text style={styles.buttonText}>Message Center</Text>
+        </TouchableOpacity>
+      </View>
+      <View style={styles.messageCenterContainer}>
+        <TouchableOpacity
+          onPress={() => navigation.navigate('Template')}
+          style={styles.fullWidthButton}>
+          <Text style={styles.buttonText}>My Calendar</Text>
+        </TouchableOpacity>
       </View>
     </ScrollView>
   );
