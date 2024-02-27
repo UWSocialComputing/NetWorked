@@ -65,7 +65,7 @@ const HomeScreen = ({navigation}) => {
       </View>
       <View style={styles.messageCenterContainer}>
         <TouchableOpacity
-          onPress={() => navigation.navigate('Template')}
+          onPress={() => navigation.navigate('CalendarScreen')}
           style={styles.fullWidthButton}>
           <Text style={styles.buttonText}>My Calendar</Text>
         </TouchableOpacity>
