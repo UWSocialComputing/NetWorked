@@ -4,6 +4,16 @@ import {StyleSheet} from 'react-native';
 import colors from './colors'; // Adjust the import path according to your project structure
 
 export default StyleSheet.create({
+  // TextInput styles
+  textInput: {
+    height: 40, // Set the height of the input
+    borderColor: 'gray', // Add a border color
+    borderWidth: 1, // Add a border width
+    margin: 10, // Add margin for better spacing
+    padding: 10, // Add padding for better spacing
+    borderRadius: 5, // Add border radius to round the corners
+  },
+
   // General text styles
   primaryText: {
     color: colors.darkOlive,

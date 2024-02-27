@@ -40,11 +40,20 @@ const HomeScreen = ({navigation}) => {
         </View>
       </View>
       <View style={styles.buttonContainer}>
-        <TouchableOpacity style={styles.button}>
+        <TouchableOpacity
+          onPress={() => navigation.navigate('AddContactScreen')} // This line will navigate to the AddContactScreen when the button is pressed.
+          style={styles.button}>
           <Text style={styles.buttonText}>New Contact</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.button}>
           <Text style={styles.buttonText}>My Stats</Text>
+        </TouchableOpacity>
+      </View>
+      <View style={styles.messageCenterContainer}>
+        <TouchableOpacity
+          onPress={() => navigation.navigate('MyContacts')} // Adjust as per your navigation needs
+          style={styles.fullWidthButton}>
+          <Text style={styles.buttonText}>My Contacts</Text>
         </TouchableOpacity>
       </View>
       <View style={styles.messageCenterContainer}>
