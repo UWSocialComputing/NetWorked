@@ -4,6 +4,26 @@ import {StyleSheet} from 'react-native';
 import colors from './colors'; // Adjust the import path according to your project structure
 
 export default StyleSheet.create({
+  // Styles for the relationship category
+  categoryContainer: {
+    marginVertical: 20,
+  },
+  categoryTitle: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    color: colors.darkOlive,
+    marginBottom: 10,
+  },
+  relationshipContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginBottom: 10,
+  },
+  relationshipText: {
+    fontSize: 16,
+    color: colors.oliveDrab,
+  },
   // TextInput styles
   textInput: {
     height: 40, // Set the height of the input
@@ -27,34 +47,48 @@ export default StyleSheet.create({
     color: colors.taupe,
     // Additional styling for subtitles
   },
+  attributesContainer: {
+    marginVertical: 10,
+  },
+  attribute: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginBottom: 5,
+  },
+  attributeText: {
+    marginLeft: 10,
+  },
   dateContainer: {
-    height: '25%', // Height is 25% of the screen
+    height: '15%', // Height is 25% of the screen
     justifyContent: 'center', // Centers the content vertically
     alignItems: 'center', // Centers the content horizontally
     backgroundColor: 'transparent', // or any desired background color
+    marginBottom: 20, // Decrease existing bottom margin by 60
   },
   dateText: {
-    fontSize: 70, // 50pt size
-    color: 'white', // White text color
+    fontSize: 90, // 50pt size
+    color: 'ivory', // White text color
     fontWeight: 'regular', // If you want the text to be bold
   },
   centersContainer: {
     flexDirection: 'row', // Aligns children side by side
     paddingHorizontal: 10, // Optional padding
     alignItems: 'flex-start', // Ensure the container aligns correctly vertically
-    height: 300, // Set a fixed height for the centersContainer and divider
-    backgroundColor: 'blue', // uncomment if you want to test with a background color
+    height: 280, // Set a fixed height for the centersContainer and divider
+    backgroundColor: 'lightKhaki', // uncomment if you want to test with a background color
+    marginBottom: 20, // Decrease existing bottom margin by 60
   },
   goalCenterContainer: {
     flex: 1, // Takes up half of the space
     alignItems: 'center', // Centers content horizontally
     justifyContent: 'flex-start', // Centers content vertically
     padding: 10, // Optional padding
-    backgroundColor: 'grey', // for visibility
+    backgroundColor: 'lightKhaki', // for visibility
+    marginBottom: 20, // Decrease existing bottom margin by 60
     // Add border or background color if needed
   },
   centerDivider: {
-    width: 3, // Vertical divider line is 3 pixels wide
+    width: 1, // Vertical divider line is 3 pixels wide
     backgroundColor: 'white', // White color for the divider
     height: '100%', // This should work if centersContainer has a fixed height
   },
@@ -63,13 +97,14 @@ export default StyleSheet.create({
     alignItems: 'center', // Centers content horizontally
     justifyContent: 'flex-start', // Centers content vertically
     padding: 10, // Optional padding
-    backgroundColor: 'grey', // for visibility
+    backgroundColor: 'lightKhaki', // for visibility
+    marginBottom: 20, // Decrease existing bottom margin by 60
   },
   centerText: {
     // Style for text in both goal and event center containers
-    fontSize: 16, // Choose an appropriate size
+    fontSize: 24, // Choose an appropriate size
     color: colors.darkOlive, // Choose a color
-    alignSelf: 'center', // Aligns text in the center
+    alignSelf: 'left', // Aligns text in the center
     // Add any other text styling needed
   },
   // Button styles
@@ -77,44 +112,49 @@ export default StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-around', // This will distribute space evenly around the buttons
     alignItems: 'center',
-    marginTop: 'auto', // This pushes the button container to the bottom
-    paddingVertical: 10, // Add padding for better spacing
-    marginBottom: 20, // Adjust the value to manage distance from the bottom of the screen
+    //marginTop: 'auto', // This pushes the button container to the bottom
+    paddingVertical: 1, // Add padding for better spacing
+    marginBottom: 1, // Adjust the value to manage distance from the bottom of the screen
+    marginTop: 5, // Space from the above content
   },
   button: {
-    backgroundColor: colors.bronze, // Use your bronze color
+    backgroundColor: colors.oliveDrab, // Use your bronze color
     padding: 10,
     borderRadius: 5,
     marginHorizontal: 5, // Add space between buttons
     // Set a specific width or use flex to share space
-    // width: 100, // Uncomment and use a fixed width if needed
-    flex: 1, // Each button will take up equal space
+    width: '40%', // Uncomment and use a fixed width if needed
+    // flex: 1, // Each button will take up equal space
     margin: 5, // Adjust the margin as needed
   },
   leftButton: {
     marginRight: 10, // Optionally, add margin to only one button to space them out
   },
   fullWidthButton: {
-    backgroundColor: colors.bronze, // Same color as the other buttons
+    backgroundColor: colors.oliveDrab, // Same color as the other buttons
     padding: 10,
     borderRadius: 5,
     alignItems: 'center', // Center text horizontally
     justifyContent: 'center', // Center text vertically
     width: '90%', // Almost full width
     alignSelf: 'center', // Center button in the container
-    marginVertical: 10, // Space from the top and bottom
-  },
+    marginVertical: 2, // Space from the top and bottom
+    marginTop: 5, // Space from the above content
 
+  },
   messageCenterContainer: {
     paddingVertical: 10, // Adjust as needed
-    marginTop: 20, // Space from the above content
-    marginBottom: 'auto', // Pushes towards the bottom, or adjust as needed
+    marginTop: 1, // Space from the above content
+    marginBottom: 20, // Pushes towards the bottom, or adjust as needed
   },
   buttonText: {
     textAlign: 'center', // Center text inside the button
-    color: 'white', // Use a color that contrasts with the button's background
+    color: 'ivory', // Use a color that contrasts with the button's background
+    fontSize: 18, // Example font size
+    fontWeight: '500', // Example font weight
     // Add any other styling for text like font size, font family
   },
+
   secondaryButton: {
     backgroundColor: colors.taupe,
     padding: 8,
@@ -167,7 +207,8 @@ export default StyleSheet.create({
   // Use this style for the ScrollView to ensure it fills the screen
   scrollViewContainer: {
     flexGrow: 1,
-    justifyContent: 'space-between', // This will push your button container to the bottom
+    justifyContent: 'flex-start', // This will push your button container to the bottom
+    paddingVertical: 40, // Add some padding at the top if needed
   },
   secondaryBackground: {
     backgroundColor: colors.khaki,

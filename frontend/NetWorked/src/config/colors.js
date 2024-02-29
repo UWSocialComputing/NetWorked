@@ -12,6 +12,7 @@ const colors = {
   khaki: '#b6ad90', // Used for background for secondary context areas, sidebar
   lightKhaki: '#c2c5aa', // Used for main background, app canvas
   darkBrown: '#582f0e', // Used for accent elements, urgent notifications, critical actions
+  wideButtonColor: '#ced2c1', // Used for wide buttons, disabled buttons
 };
 
 export default colors;

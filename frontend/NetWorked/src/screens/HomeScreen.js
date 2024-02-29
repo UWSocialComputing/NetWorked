@@ -31,19 +31,19 @@ const HomeScreen = ({navigation}) => {
       </View>
       <View style={styles.centersContainer}>
         <View style={styles.goalCenterContainer}>
-          <Text style={styles.centerText}>Goal Center</Text>
+          <Text style={styles.centerText}>Goals:</Text>
         </View>
         {/* Divider View */}
         <View style={styles.centerDivider} />
         <View style={styles.eventCenterContainer}>
-          <Text style={styles.centerText}>Event Center</Text>
+          <Text style={styles.centerText}>Today's Events:</Text>
         </View>
       </View>
       <View style={styles.buttonContainer}>
         <TouchableOpacity
           onPress={() => navigation.navigate('AddContactScreen')} // This line will navigate to the AddContactScreen when the button is pressed.
           style={styles.button}>
-          <Text style={styles.buttonText}>New Contact</Text>
+          <Text style={styles.buttonText}>My Contacts</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.button}>
           <Text style={styles.buttonText}>My Stats</Text>
@@ -51,15 +51,15 @@ const HomeScreen = ({navigation}) => {
       </View>
       <View style={styles.messageCenterContainer}>
         <TouchableOpacity
-          onPress={() => navigation.navigate('MyContacts')} // Adjust as per your navigation needs
+          onPress={() => navigation.navigate('AddContactScreen')} // Adjust as per your navigation needs
           style={styles.fullWidthButton}>
           <Text style={styles.buttonText}>My Contacts</Text>
         </TouchableOpacity>
       </View>
       <View style={styles.messageCenterContainer}>
         <TouchableOpacity
-          onPress={() => navigation.navigate('Template')}
-          style={styles.fullWidthButton}>
+            onPress={() => navigation.navigate('Template')} // Update this line
+            style={styles.fullWidthButton}>
           <Text style={styles.buttonText}>Message Center</Text>
         </TouchableOpacity>
       </View>
