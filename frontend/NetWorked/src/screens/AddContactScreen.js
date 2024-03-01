@@ -19,9 +19,15 @@ const AddContactScreen = ({navigation, route}) => {
   const [email, setEmail] = useState('');
     const [notificationsEnabled, setNotificationsEnabled] = useState(false);
     const [relationship, setRelationship] = useState({ colleague: false, mentor: false, supervisor: false });
-    const [communicationType, setCommunicationType] = useState({ message: false, email: false, callMeeting: false });
-    const [communicationFrequency, setCommunicationFrequency] = useState({ weekly: false, monthly: false, quarterly: false, custom: false });
-  const [isEditing, setIsEditing] = useState(
+    const [communicationType, setCommunicationType] = useState({ Message: false, Email: false, "Call / Meeting": false });
+    const [communicationFrequency, setCommunicationFrequency] = useState({ weekly: false, monthly: false, quarterly: false });
+    const [nameTouched, setNameTouched] = useState(false);
+    const [isValidName, setIsValidName] = useState(true);
+    const validateName = () => {
+        setNameTouched(true); // Mark the Name field as touched
+        setIsValidName(name.trim() !== ''); // Set isValidName based on whether the name is empty
+    };
+    const [isEditing, setIsEditing] = useState(
     route.params?.contact ? true : false,
   ); // Determine if editing based on passed contact
 
@@ -52,17 +58,47 @@ const AddContactScreen = ({navigation, route}) => {
             </View>
         ));
     };
+    // Function to render Communication Type checkboxes
+    const renderCommunicationTypeCheckboxes = () => {
+        return Object.keys(communicationType).map(key => (
+            <View key={key} style={styles.relationshipContainer}>
+                <Text style={styles.relationshipText}>{key.replace(/([A-Z])/g, ' $1').trim()}</Text>
+                <CheckBox
+                    value={communicationType[key]}
+                    onValueChange={newValue => setCommunicationType({...communicationType, [key]: newValue})}
+                    tintColors={{ true: colors.oliveDrab, false: colors.deepKhaki }} // Assuming you want the checkmark to be white
+                />
+            </View>
+        ));
+    };
+    // Function to render frequency checkboxes
+    const renderFrequencyCheckboxes = () => {
+        return Object.keys(communicationFrequency).map(key => (
+            <View key={key} style={styles.relationshipContainer}>
+                <Text style={styles.relationshipText}>{key.charAt(0).toUpperCase() + key.slice(1)}</Text>
+                <CheckBox
+                    value={communicationFrequency[key]}
+                    onValueChange={newValue => setCommunicationFrequency({...communicationFrequency, [key]: newValue})}
+                    tintColors={{ true: colors.oliveDrab, false: colors.deepKhaki }} // Adjust colors as needed
+                />
+            </View>
+        ));
+    };
 
-  return (
-    <ScrollView style={styles.mainBackground}>
-      <Text style={styles.primaryText}>Add Contact</Text>
-      <TextInput
-        style={styles.textInput}
-        value={name}
-        onChangeText={setName}
-        placeholder="Name"
-        placeholderTextColor={colors.oliveDrab}
-      />
+
+    return (
+      <ScrollView style={styles.mainBackground}>
+          {/* Title */}
+          <Text style={styles.screenTitle}>Add Contact</Text>
+          {/* Form fields */}
+          <TextInput
+              style={[styles.textInput, !isValidName && nameTouched ? styles.invalidInput : {}]}
+              value={name}
+              onChangeText={setName}
+              placeholder="Name"
+              placeholderTextColor={colors.oliveDrab}
+              onBlur={validateName} // Validate when the user leaves the field
+          />
       <TextInput
         style={styles.textInput}
         value={phone}
@@ -82,6 +118,16 @@ const AddContactScreen = ({navigation, route}) => {
             <Text style={styles.categoryTitle}>Relationship</Text>
             {renderRelationshipCheckboxes()}
         </View>
+          {/* Communication Type category */}
+          <View style={styles.categoryContainer}>
+              <Text style={styles.categoryTitle}>Communication Type</Text>
+              {renderCommunicationTypeCheckboxes()}
+          </View>
+          {/* Frequency category */}
+          <View style={styles.categoryContainer}>
+              <Text style={styles.categoryTitle}>Frequency</Text>
+              {renderFrequencyCheckboxes()}
+          </View>
         <TouchableOpacity style={styles.button} onPress={handleSave}>
             <Text style={styles.buttonText}>{isEditing ? 'Update' : 'Save'}</Text>
         </TouchableOpacity>

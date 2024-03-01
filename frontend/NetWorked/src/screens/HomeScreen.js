@@ -43,19 +43,21 @@ const HomeScreen = ({navigation}) => {
         <TouchableOpacity
           onPress={() => navigation.navigate('AddContactScreen')} // This line will navigate to the AddContactScreen when the button is pressed.
           style={styles.button}>
-          <Text style={styles.buttonText}>My Contacts</Text>
+          <Text style={styles.buttonText}>Contacts</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.button}>
-          <Text style={styles.buttonText}>My Stats</Text>
-        </TouchableOpacity>
-      </View>
-      <View style={styles.messageCenterContainer}>
         <TouchableOpacity
-          onPress={() => navigation.navigate('AddContactScreen')} // Adjust as per your navigation needs
-          style={styles.fullWidthButton}>
-          <Text style={styles.buttonText}>My Contacts</Text>
+            onPress={() => navigation.navigate('CalendarScreen')} // This line will navigate to the CalendarScreen when the button is pressed.
+            style={styles.button}>
+          <Text style={styles.buttonText}>Calendar</Text>
         </TouchableOpacity>
       </View>
+      {/*<View style={styles.messageCenterContainer}>*/}
+      {/*  <TouchableOpacity*/}
+      {/*    onPress={() => navigation.navigate('AddContactScreen')} // Adjust as per your navigation needs*/}
+      {/*    style={styles.fullWidthButton}>*/}
+      {/*    <Text style={styles.buttonText}>My Contacts</Text>*/}
+      {/*  </TouchableOpacity>*/}
+      {/*</View>*/}
       <View style={styles.messageCenterContainer}>
         <TouchableOpacity
             onPress={() => navigation.navigate('Template')} // Update this line
@@ -63,13 +65,13 @@ const HomeScreen = ({navigation}) => {
           <Text style={styles.buttonText}>Message Center</Text>
         </TouchableOpacity>
       </View>
-      <View style={styles.messageCenterContainer}>
-        <TouchableOpacity
-          onPress={() => navigation.navigate('CalendarScreen')}
-          style={styles.fullWidthButton}>
-          <Text style={styles.buttonText}>My Calendar</Text>
-        </TouchableOpacity>
-      </View>
+      {/*<View style={styles.messageCenterContainer}>*/}
+      {/*  <TouchableOpacity*/}
+      {/*    onPress={() => navigation.navigate('CalendarScreen')}*/}
+      {/*    style={styles.fullWidthButton}>*/}
+      {/*    <Text style={styles.buttonText}>My Calendar</Text>*/}
+      {/*  </TouchableOpacity>*/}
+      {/*</View>*/}
     </ScrollView>
   );
 };

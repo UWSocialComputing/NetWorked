@@ -25,7 +25,9 @@ const ChatInterface = () => {
             const data = await chatResponse.json();
             setResponse(data.reply);
         } catch (error) {
+            // @ts-ignore
             console.error("Fetch error:", error.message);
+            // @ts-ignore
             setResponse(`Error: ${error.message}`);
         }
     };

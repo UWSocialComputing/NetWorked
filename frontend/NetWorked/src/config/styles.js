@@ -4,25 +4,55 @@ import {StyleSheet} from 'react-native';
 import colors from './colors'; // Adjust the import path according to your project structure
 
 export default StyleSheet.create({
+
+  largeTextInput: {
+    borderWidth: 2,
+    borderColor: 'gray',
+    borderRadius: 5,
+    padding: 10,
+    marginTop: 20,
+    marginBottom: 20,
+    fontSize: 18,
+    textAlignVertical: 'top', // Aligns text to the top on Android
+    marginHorizontal: '5%', // Adjust the margin to center the TextInput
+    width: '90%', // Set width
+    height: 200, // Set height
+  },
+
+  // AddContactScreen styles
+  invalidInput: {
+    borderColor: 'red', // Highlight in red (or any color of your choice)
+    borderWidth: 2, // Make the border thicker to draw attention
+  },
+  screenTitle: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    color: colors.darkOlive,
+    alignSelf: 'center',
+    marginVertical: 20, // Adjust the vertical margin as needed
+  },
   // Styles for the relationship category
   categoryContainer: {
-    marginVertical: 20,
+    marginVertical: 10,
   },
   categoryTitle: {
     fontSize: 18,
     fontWeight: 'bold',
     color: colors.darkOlive,
-    marginBottom: 10,
+    marginBottom: 5,
+    marginHorizontal: 10,
   },
   relationshipContainer: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    marginBottom: 10,
+    marginBottom: 5,
+    marginHorizontal: 10, // Aligns with the text input fields
   },
   relationshipText: {
     fontSize: 16,
     color: colors.oliveDrab,
+    marginHorizontal: 10,
   },
   // TextInput styles
   textInput: {
@@ -32,6 +62,7 @@ export default StyleSheet.create({
     margin: 10, // Add margin for better spacing
     padding: 10, // Add padding for better spacing
     borderRadius: 5, // Add border radius to round the corners
+
   },
 
   // General text styles
@@ -108,6 +139,25 @@ export default StyleSheet.create({
     // Add any other text styling needed
   },
   // Button styles
+  submitButton: {
+    backgroundColor: colors.deepKhaki, // Use the color you want for the button
+    paddingVertical: 10,
+    paddingHorizontal: 20,
+    borderRadius: 5,
+    // If you want the text to be bold
+    fontWeight: '600',
+    fontSize: 16, // Set the font size for the button text
+  },
+  submitButtonText: {
+    color: 'white', // Text color for buttons
+    fontSize: 16, // Adjust as needed
+  },
+  submitButtonContainer: {
+    alignSelf: 'stretch', // This ensures the container fills the width of its parent
+    justifyContent: 'center', // This centers the button horizontally in the container
+    alignItems: 'center', // This centers the button vertically in the container
+    padding: 10, // Add padding if necessary
+  },
   buttonContainer: {
     flexDirection: 'row',
     justifyContent: 'space-around', // This will distribute space evenly around the buttons
