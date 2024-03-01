@@ -1,4 +1,5 @@
 // HomeScreen.js
+// Import necessary components from React and React Native libraries
 import React from 'react';
 import {
   View,
@@ -21,18 +22,36 @@ const HomeScreen = ({navigation}) => {
   return (
     <ScrollView
       style={styles.mainBackground}
-      contentContainerStyle={styles.scrollViewContainer} // This line is crucial
+      contentContainerStyle={styles.scrollViewContainer}
     >
       <View style={styles.dateContainer}>
         <Text style={styles.dateText}>{formattedDate}</Text>
       </View>
       <View style={styles.header}>
-        {/* User avatar, date, and settings icon would be here */}
       </View>
       <View style={styles.centersContainer}>
         <View style={styles.goalCenterContainer}>
           <Text style={styles.centerText}>Goals:</Text>
+          {/* Circular progress bar with a fraction inside */}
+          <CircularProgress
+              size={125} // size of the circle
+              width={15} // thickness of the progress line
+              fill={40} // percentage filled
+              tintColor="yellow" // color of the progress line
+              backgroundColor="green" // color of the remaining circle
+          >
+            {() => (
+                <Text style={styles.progressText}>2/5</Text>
+            )}
+          </CircularProgress>
+
+          {/* "Monthly:" label */}
+          <Text style={styles.monthlyLabel}>Monthly:</Text>
+
+          {/* Colored bar for Monthly */}
+          <View style={styles.monthlyBar}></View>
         </View>
+
         {/* Divider View */}
         <View style={styles.centerDivider} />
         <View style={styles.eventCenterContainer}>
@@ -41,7 +60,7 @@ const HomeScreen = ({navigation}) => {
       </View>
       <View style={styles.buttonContainer}>
         <TouchableOpacity
-          onPress={() => navigation.navigate('AddContactScreen')} // This line will navigate to the AddContactScreen when the button is pressed.
+          onPress={() => navigation.navigate('ContactList')} // This line will navigate to the ContactList when the button is pressed.
           style={styles.button}>
           <Text style={styles.buttonText}>Contacts</Text>
         </TouchableOpacity>
@@ -51,52 +70,15 @@ const HomeScreen = ({navigation}) => {
           <Text style={styles.buttonText}>Calendar</Text>
         </TouchableOpacity>
       </View>
-      {/*<View style={styles.messageCenterContainer}>*/}
-      {/*  <TouchableOpacity*/}
-      {/*    onPress={() => navigation.navigate('AddContactScreen')} // Adjust as per your navigation needs*/}
-      {/*    style={styles.fullWidthButton}>*/}
-      {/*    <Text style={styles.buttonText}>My Contacts</Text>*/}
-      {/*  </TouchableOpacity>*/}
-      {/*</View>*/}
       <View style={styles.messageCenterContainer}>
         <TouchableOpacity
-            onPress={() => navigation.navigate('Template')} // Update this line
+            onPress={() => navigation.navigate('Template')}
             style={styles.fullWidthButton}>
           <Text style={styles.buttonText}>Message Center</Text>
         </TouchableOpacity>
       </View>
-      {/*<View style={styles.messageCenterContainer}>*/}
-      {/*  <TouchableOpacity*/}
-      {/*    onPress={() => navigation.navigate('CalendarScreen')}*/}
-      {/*    style={styles.fullWidthButton}>*/}
-      {/*    <Text style={styles.buttonText}>My Calendar</Text>*/}
-      {/*  </TouchableOpacity>*/}
-      {/*</View>*/}
     </ScrollView>
   );
 };
-
-// Add to your existing styles.js or create these within the HomeScreen.js
-const additionalStyles = StyleSheet.create({
-  header: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    // Add styles for your header
-  },
-  goalsContainer: {
-    // Add styles for your goals container
-  },
-  eventsContainer: {
-    // Add styles for your events container
-  },
-  buttonContainer: {
-    // Add styles for your button container
-  },
-  buttonText: {
-    // Add styles for your button text
-  },
-  // ... any other additional styles you need
-});
 
 export default HomeScreen;

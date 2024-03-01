@@ -5,6 +5,80 @@ import colors from './colors'; // Adjust the import path according to your proje
 
 export default StyleSheet.create({
 
+  progressText: {
+    fontSize: 24,
+    color: colors.oliveDrab, // color of the fraction text
+    // Additional styling as needed
+  },
+
+  monthlyLabel: {
+    fontSize: 18,
+    color: colors.darkOlive, // color of the "Monthly:" label
+    marginBottom: 10,
+    marginTop: 20,
+    alignSelf: 'left',
+    // Additional styling as needed
+  },
+
+  monthlyBar: {
+    height: 10,
+    width: '90%', // width of the bar
+    backgroundColor: 'orange', // color of the bar
+    alignSelf: 'left',
+
+    // Additional styling as needed
+  },
+  contactDetailContainer: {
+    flex: 1,
+    padding: 20, // Provide adequate padding around the container
+    backgroundColor: colors.lightKhaki, // Use the standard background color
+  },
+
+  contactDetailTitle: {
+    fontSize: 22,
+    fontWeight: 'bold',
+    color: colors.darkOlive, // Match the title color with your theme
+    alignSelf: 'center', // Center title
+    marginVertical: 20, // Space above and below the title
+  },
+
+  contactDetailText: {
+    fontSize: 18,
+    color: colors.darkOlive, // Ensure text is easily readable on the background
+    marginBottom: 10, // Space between each detail
+  },
+  addButton: {
+    position: 'absolute',
+    right: 20,
+    top: 10,
+    backgroundColor: colors.deepKhaki, // Button color
+    width: 40,
+    height: 40,
+    borderRadius: 20,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  addButtonText: {
+    color: 'white',
+    fontSize: 24,
+  },
+  itemText: {
+    padding: 10,
+    fontSize: 18,
+    color: colors.darkOlive, // Adjust text color as needed
+  },
+  itemSeparator: {
+    height: 1,
+    backgroundColor: colors.mediumBrown, // Adjust separator color as needed
+    width: '100%',
+  },
+  sectionHeader: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    backgroundColor: colors.lightKhaki, // Adjust background color as needed
+    color: colors.darkOlive, // Adjust text color as needed
+    padding: 10,
+  },
   largeTextInput: {
     borderWidth: 2,
     borderColor: 'gray',
@@ -62,6 +136,8 @@ export default StyleSheet.create({
     margin: 10, // Add margin for better spacing
     padding: 10, // Add padding for better spacing
     borderRadius: 5, // Add border radius to round the corners
+    backgroundColor: colors.lightKhaki, // Change this to your desired background color for the input fields
+    color: colors.darkOlive, // This is the text color inside the input fields
 
   },
 
