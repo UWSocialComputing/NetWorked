@@ -33,6 +33,9 @@ const AddContactScreen = ({navigation, route}) => {
 
   const handleSave = () => {
     // Implement save functionality here
+      if (notificationsEnabled) {
+          // Logic to schedule notifications
+      }
     Alert.alert('Save Contact', 'Contact saved successfully!');
   };
 
@@ -128,9 +131,21 @@ const AddContactScreen = ({navigation, route}) => {
               <Text style={styles.categoryTitle}>Frequency</Text>
               {renderFrequencyCheckboxes()}
           </View>
-        <TouchableOpacity style={styles.button} onPress={handleSave}>
-            <Text style={styles.buttonText}>{isEditing ? 'Update' : 'Save'}</Text>
-        </TouchableOpacity>
+          <View style={styles.saveAndNotifyContainer}>
+              <TouchableOpacity style={styles.button} onPress={handleSave}>
+                  <Text style={styles.buttonText}>{isEditing ? 'Update' : 'Save'}</Text>
+              </TouchableOpacity>
+              <View style={styles.notificationsSwitchContainer}>
+                  <Switch
+                      trackColor={{ false: colors.oliveDrab, true: colors.oliveDrab }}
+                      thumbColor={notificationsEnabled ? colors.darkOlive : colors.lightKhaki}
+                      ios_backgroundColor={colors.deepKhaki}
+                      onValueChange={setNotificationsEnabled}
+                      value={notificationsEnabled}
+                  />
+                  <Text style={styles.switchLabel}>Notifications</Text>
+              </View>
+          </View>
     </ScrollView>
   );
 };

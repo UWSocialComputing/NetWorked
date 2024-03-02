@@ -5,6 +5,28 @@ import colors from './colors'; // Adjust the import path according to your proje
 
 export default StyleSheet.create({
 
+  // New styles for layout
+  saveAndNotifyContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    padding: 10,
+  },
+
+  notificationsSwitchContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    // If you want to align the switch to the right, you may not need this
+  },
+
+// If you want to add text next to the toggle switch
+  switchLabel: {
+    marginLeft: 10,
+    marginRight: 10,
+    fontSize: 16,
+    color: colors.darkOlive,
+  },
+
   progressText: {
     fontSize: 24,
     color: colors.oliveDrab, // color of the fraction text

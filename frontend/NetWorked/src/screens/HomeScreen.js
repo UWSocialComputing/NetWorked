@@ -41,7 +41,7 @@ const HomeScreen = ({navigation}) => {
               backgroundColor="green" // color of the remaining circle
           >
             {() => (
-                <Text style={styles.progressText}>2/5</Text>
+                <Text style={styles.progressText}>3/5</Text>
             )}
           </CircularProgress>
 
