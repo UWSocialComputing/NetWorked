@@ -138,7 +138,7 @@ const AddContactScreen = ({navigation, route}) => {
               <View style={styles.notificationsSwitchContainer}>
                   <Switch
                       trackColor={{ false: colors.oliveDrab, true: colors.oliveDrab }}
-                      thumbColor={notificationsEnabled ? colors.darkOlive : colors.lightKhaki}
+                      thumbColor={notificationsEnabled ? colors.lightKhaki : colors.lightKhaki}
                       ios_backgroundColor={colors.deepKhaki}
                       onValueChange={setNotificationsEnabled}
                       value={notificationsEnabled}

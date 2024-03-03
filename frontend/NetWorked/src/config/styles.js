@@ -5,6 +5,48 @@ import colors from './colors'; // Adjust the import path according to your proje
 
 export default StyleSheet.create({
 
+  centeredButton: {
+    alignSelf: 'center', // Center the button horizontally
+  },
+  upperRight: {
+    position: 'absolute',
+    top: 10, // Adjust top position as needed
+    right: 10, // Adjust right position as needed
+  },
+  // New styles for ViewTaskScreen
+  viewTaskContainer: {
+    flex: 1,
+    backgroundColor: colors.lightKhaki, // Use the same background color as ContactList
+    paddingHorizontal: 20,
+    paddingTop: 20,
+  },
+  viewTaskTitle: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    marginBottom: 20,
+  },
+
+  // Floating action button styles
+  floatingActionButton: {
+    position: 'absolute',
+    right: 20,
+    bottom: 20,
+    backgroundColor: colors.deepKhaki,
+    width: 50,
+    height: 50,
+    borderRadius: 25,
+    justifyContent: 'center',
+    alignItems: 'center',
+    elevation: 5, // Add elevation for shadow effect (Android)
+    shadowColor: '#000', // Add shadow color (iOS)
+    shadowOffset: { width: 0, height: 3 }, // Add shadow offset (iOS)
+    shadowOpacity: 0.5, // Add shadow opacity (iOS)
+    shadowRadius: 3, // Add shadow radius (iOS)
+  },
+  fabText: {
+    color: 'white',
+    fontSize: 30,
+  },
   // New styles for layout
   saveAndNotifyContainer: {
     flexDirection: 'row',
@@ -34,7 +76,7 @@ export default StyleSheet.create({
   },
 
   monthlyLabel: {
-    fontSize: 18,
+    fontSize: 22,
     color: colors.darkOlive, // color of the "Monthly:" label
     marginBottom: 10,
     marginTop: 20,
@@ -43,7 +85,7 @@ export default StyleSheet.create({
   },
 
   monthlyBar: {
-    height: 10,
+    height: 20,
     width: '90%', // width of the bar
     backgroundColor: 'orange', // color of the bar
     alignSelf: 'left',
@@ -294,6 +336,7 @@ export default StyleSheet.create({
     paddingVertical: 10, // Adjust as needed
     marginTop: 1, // Space from the above content
     marginBottom: 20, // Pushes towards the bottom, or adjust as needed
+
   },
   buttonText: {
     textAlign: 'center', // Center text inside the button

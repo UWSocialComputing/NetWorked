@@ -34,8 +34,8 @@ const HomeScreen = ({navigation}) => {
           <Text style={styles.centerText}>Goals:</Text>
           {/* Circular progress bar with a fraction inside */}
           <CircularProgress
-              size={125} // size of the circle
-              width={15} // thickness of the progress line
+              size={150} // size of the circle
+              width={20} // thickness of the progress line
               fill={40} // percentage filled
               tintColor="yellow" // color of the progress line
               backgroundColor="green" // color of the remaining circle
