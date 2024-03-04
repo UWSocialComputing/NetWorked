@@ -12,7 +12,7 @@ import {
 } from 'react-native';
 import styles from '../config/styles'; // Adjust the import path according to your project structure
 import colors from '../config/colors'; // Adjust the import path according to your project structure
-import firestore from '@react-native-firebase/firestore';
+// import firestore from '@react-native-firebase/firestore';
 
 const AddContactScreen = ({navigation, route}) => {
   const [name, setName] = useState('');
@@ -50,19 +50,19 @@ const AddContactScreen = ({navigation, route}) => {
           frequency: communicationFrequency,
           notifications: notificationsEnabled
       };
-
-      firestore()
-          .collection('Contacts')
-          .add(contactData)
-          .then(() => {
-              // Successful save
-              Alert.alert('Save Contact', 'Contact saved successfully!');
-              navigation.goBack();
-          })
-          .catch(error => {
-              console.error('Error adding contact: ', error);
-              Alert.alert('Error', 'Failed to save contact.');
-          });
+      //
+      // firestore()
+      //     .collection('Contacts')
+      //     .add(contactData)
+      //     .then(() => {
+      //         // Successful save
+      //         Alert.alert('Save Contact', 'Contact saved successfully!');
+      //         navigation.goBack();
+      //     })
+      //     .catch(error => {
+      //         console.error('Error adding contact: ', error);
+      //         Alert.alert('Error', 'Failed to save contact.');
+      //     });
   };
 
   const handleCancel = () => {
