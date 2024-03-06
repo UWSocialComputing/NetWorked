@@ -15,14 +15,14 @@ Our app is designed to assist young professionals in building and managing their
 To set up your development environment and start using the Networking Assistant App, follow these steps:
 
 1. Clone the repository:
-2. 
+   
    `git clone https://github.com/UWSocialComputing/Limp-Fish-code.git`
 
-3. Navigate to the frontend directory:
+2. Navigate to the frontend directory:
    
    `cd Limp-Fish-code/frontend/NetWorked`
    
-4. Install the necessary packages:
+3. Install the necessary packages:
    
    `npm install`
 or if you prefer using 'yarn'
