@@ -29,7 +29,7 @@ or if you prefer using 'yarn'
    
    `yarn install`
 
-##Usage
+## Usage
 To run the Networking Assistant App locally:
 
 1. Ensure you are in the frontend NetWorked directory.
