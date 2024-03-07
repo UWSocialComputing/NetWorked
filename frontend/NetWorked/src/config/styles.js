@@ -426,4 +426,9 @@ export default StyleSheet.create({
     // Additional styling for the footer
   },
   // ... any other common styles you need
+
+  // chatInterface
+  responseText: {
+    flexShrink: 1,
+  }
 });

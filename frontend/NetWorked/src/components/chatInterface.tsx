@@ -8,7 +8,7 @@ const ChatInterface = () => {
     const initialMessage = "I am [contact method: calling, sending an email, having a meeting, sending a message] " +
         "to my [relationship: colleague, supervisor, mentor]. We typically communicate on a " +
         "[frequency: daily, weekly, monthly] basis. The purpose of this contact is to discuss " +
-        "[topic: specify the topic, possibly referencing the last discussed topic from your notes]. " +
+        "[topic: specify the topic, possibly referencing your last discussed topic]. " +
         "Based on the medium of contact and the context of the topic, please provide a conversation starter template.";
 
     const [prompt, setPrompt] = useState('');
@@ -66,7 +66,7 @@ const ChatInterface = () => {
             <TouchableOpacity style={styles.button} onPress={handleSubmit}>
                 <Text style={styles.buttonText}>Submit</Text>
             </TouchableOpacity>
-            {response && <Text>{JSON.stringify(response)}</Text>}
+            {response && <Text style={styles.responseText}>{response}</Text>}
         </View>
     );
 };
