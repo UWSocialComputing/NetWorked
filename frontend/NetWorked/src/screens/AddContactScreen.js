@@ -13,8 +13,9 @@ import {
 import styles from '../config/styles'; // Adjust the import path according to your project structure
 import colors from '../config/colors'; // Adjust the import path according to your project structure
 // import firestore from '@react-native-firebase/firestore';
-
+// Component definition for AddContactScreen with navigation and route props
 const AddContactScreen = ({navigation, route}) => {
+    // State hooks for form fields and validations
     const [name, setName] = useState('');
     const [phone, setPhone] = useState('');
     const [email, setEmail] = useState('');
@@ -53,19 +54,7 @@ const AddContactScreen = ({navigation, route}) => {
 
                 Alert.alert('Save Contact', 'Contact saved successfully!');
                 navigation.goBack();
-        //
-        // firestore()
-        //     .collection('Contacts')
-        //     .add(contactData)
-        //     .then(() => {
-        //         // Successful save
-        //         Alert.alert('Save Contact', 'Contact saved successfully!');
-        //         navigation.goBack();
-        //     })
-        //     .catch(error => {
-        //         console.error('Error adding contact: ', error);
-        //         Alert.alert('Error', 'Failed to save contact.');
-        //     });
+
     };
 
     const handleCancel = () => {
