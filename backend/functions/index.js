@@ -2,7 +2,7 @@ const functions = require("firebase-functions");
 const axios = require("axios");
 const cors = require("cors")({origin: true});
 
-// Initialize a simple cache
+// Initialize cache
 const cache = {};
 
 exports.chatGPT = functions.https.onRequest((request, response) => {
@@ -29,6 +29,7 @@ exports.chatGPT = functions.https.onRequest((request, response) => {
           {
             headers: {
               "Content-Type": "application/json",
+              // API key is stored in an environmental variable
               "Authorization": `Bearer ${openAIKey}`,
             },
           },
@@ -38,6 +39,7 @@ exports.chatGPT = functions.https.onRequest((request, response) => {
       const replyText = openAIResponse.data.choices[0].text;
       cache[prompt] = replyText;
 
+      // Error logging
       response.json({reply: replyText});
     } catch (error) {
       console.error("OpenAI error:", error.message);
