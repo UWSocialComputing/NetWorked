@@ -9,7 +9,7 @@ Our app is designed to assist young professionals in building and managing their
 - Contact Management: Intentionally add professional contacts.
 - AI-Prompt Generator: Use ChatGPT to create conversation starters.
 - Task Management: Keep track of networking tasks and goals.
-- Notification System: Get reminded of important follow-ups.
+- (Coming Soon!) Notification System: Get reminded of important follow-ups.
 
 ## Installation
 To set up your development environment and start using the Networking Assistant App, follow these steps:
@@ -32,13 +32,18 @@ or if you prefer using 'yarn'
 ## Usage
 To run the Networking Assistant App locally:
 
-1. Ensure you are in the frontend NetWorked directory.
+1. Open up two terminal tabs.
+1. In both tabs, ensure you are in the frontend NetWorked src directory.
 2. Start the application:
-   `npm start`
-   or with 'yarn':
-   `yarn start`
+   - In the first tab, run:
+      `npm start`
+      or with 'yarn':
+      `yarn start`
+   - In the second tab, run:
+     `npx react-native run-ios`
+3. Have patience while the app builds; enjoy!
 
-This will run the app in the development mode. Open http://localhost:3000 to view it in the browser. The page will reload if you make edits.   
+This will run the app in the development mode on an iOS emulator. The app will reload if you make edits.
 
 
 
