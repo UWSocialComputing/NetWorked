@@ -1,12 +1,12 @@
 # Limp-Fish-code
 
-# Networking Assistant App
+# NetWorked: Networking Assistant App
 
 ## Overview
 Our app is designed to assist young professionals in building and managing their professional networks effectively. It facilitates tracking interactions, managing contacts, and leveraging AI to initiate conversations.
 
 ## Features
-- Contact Management: Add, update, and delete professional contacts.
+- Contact Management: Intentionally add professional contacts.
 - AI-Prompt Generator: Use ChatGPT to create conversation starters.
 - Task Management: Keep track of networking tasks and goals.
 - Notification System: Get reminded of important follow-ups.
