@@ -1,5 +1,3 @@
-# Limp-Fish-code
-
 # NetWorked: Networking Assistant App
 
 ## Overview
